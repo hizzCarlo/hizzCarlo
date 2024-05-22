@@ -1,0 +1,31 @@
+.logo {
+    width: 120px;
+    height: 45px;
+    filter: brightness(0) invert(1);
+    margin-right: 25px;
+}
+
+
+.navbar{
+    backdrop-filter: blur(5px); /* Adjust the blur intensity as needed */
+    height: 90px;
+    margin-bottom: 10px;
+}
+
+.img{
+    width: 90px;
+}
+
+
+h5{
+    color: #EE7214 !important;
+}
+
+
+.nav-link a{
+    color: #025464 !important;
+}
+
+.main-page-header {
+  background-color: #000000; /* Example background color */
+}

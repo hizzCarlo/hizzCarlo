@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle">
+    <div class="col-lg-3 col-md-4">
+      <div style="background-color: transparent; border: none;" class="sidebar">
+        <label for="sidebar-toggle" class="sidebar-toggle-label">&#9776; Toggle Sidebar</label>
+        <a class="nav-link" routerLinkActive="active" routerLink="/survey">Surveys</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/respondent-data">Respondent</a>
+        <div class="create-survey">
+          <a type="button" class="btn1 button-option" routerLinkActive="active" routerLink="/formSurvey">New Survey
+            +</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main content -->
+   <div style="position: relative; right: 140px;" class="col-lg-9 col-md-8">
+      <div class="card pb-3" style="width: 100%; margin-top: 8rem; background-color: #a0deff17; outline: 6px solid rgba(255, 255, 255, 0); border: none; border-radius: 20px; box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);">
+        <!-- Remaining content as it is -->
+        <div style="background-color: #a0deff17; padding-top: 15px; padding-bottom: 0px" class="card-header">
+          <p style="color:#EE7214; font-size: 40px;" class="text-center">Manage surveys</p>
+        </div>
+        <div class="options-header mt-2 pt-2">
+          <label style="padding-left: 2rem;" for="category">Choose category:</label>
+          <div style="padding-right: 2rem;" class="select-category">
+            <select class="form-select" aria-label="Default select example" id="category" name="category"
+              [(ngModel)]="actualCategory" (change)="getSurveys(actualCategory)" style="margin-left: 10px">
+              <option value=5 >All Categories</option>
+              <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
+            </select>
+          </div>
+         
+        </div>
+      </div>
+    
+      <div style="background-color: #a0deff17; outline: 6px solid rgba(255, 255, 255, 0); border: none; border-radius: 20px; margin-top: 10px; padding-top:10px; box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2)"class="card mt-3">
+        <div class="card-body">
+          <div class="surveys p-3" 
+            *ngFor="let survey of surveys.reverse() | paginate: { itemsPerPage: 2, currentPage: currentPage, totalItems: surveys.length }">
+            <div class="header-survey" style="margin-bottom: 25px; ">
+              <h4 style="width: 80%; font-weight: bold; color: #EE7214;">{{survey.title}}</h4>
+              <div style="font-size: small; font-weight: bold;">Questions: {{ survey.questions.length }}</div>
+            
+            </div>
+            <div class="create-at mt-1">{{survey.createAt}}</div>
+            <div class="card-text survey-description">
+              <p>{{survey.description}}</p>
+            </div>
+            <div class="survey-options mb-2">
+              <a [ngClass]="{ 'disabled-link': survey.questions.length <= 0 }"
+                class="btn btn-survey button-option" routerLinkActive="active"
+                [routerLink]="'/tabulatesurvey/'+survey.codeSurvey">Analytics</a>
+    
+              <a [ngClass]="{ 'disabled-link': survey.questions.length <= 0 }"
+              class="btn button-option btn-survey" (click)="copyLink(survey.codeSurvey)">Copy Survey Link</a>
+              
+              <a class="btn button-option btn-survey" routerLinkActive="active"
+                [routerLink]="survey.questions.length >0 ? '/editsurvey/' + survey.id : '/questionoption/' + survey.id">{{survey.questions.length
+                >0 ? 'Edit questions' : 'Create Questions'}}</a>
+              <a class="btn button-option btn-survey" (click)="deleteSurvey(survey.id)">Delete Survey</a>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</div>

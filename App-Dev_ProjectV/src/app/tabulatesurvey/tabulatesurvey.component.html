@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-lg-3 col-md-4">
+      <div style="background-color: transparent; border: none;" class="sidebar">
+        <label for="sidebar-toggle" class="sidebar-toggle-label">&#9776; Toggle Sidebar</label>
+        <a class="nav-link" routerLinkActive="active" routerLink="/survey">Surveys</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/respondent-data">Respondent</a>
+        <div class="create-survey">
+          <a type="button" class="btn1 button-option" routerLinkActive="active" routerLink="/formSurvey">New Survey
+            +</a>
+        </div>
+      </div>
+      </div>
+
+      <div style="position: relative; right: 140px;" class="col-lg-9 col-md-8">
+        <div class="card pb-3" style="width: 100%; margin-bottom: 20px; margin-top: 8rem;background-color: #a0deff17; outline: 6px solid rgba(255, 255, 255, 0); border: none; border-radius: 20px; box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2)">
+            <div style="background-color: #a0deff17; padding-top: 15px; padding-bottom: 0px;" class="card-header">
+              <p style="color:#EE7214; font-size: 40px;" class="text-center">Survey Results</p>
+              </div>
+              <div class="card-body">
+                  <div class="select-question pb-1" style="margin-bottom: -10px;">
+                      <label for="question">Select question:</label>
+                      <select class="form-select" aria-label="Default select example" id="question" name="question"
+                          [(ngModel)]="actualQuestion" (ngModelChange)="tabulateData()">
+                          <option *ngFor="let question of questions" [ngValue]="question">{{ question.question }}
+                          </option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+           <div class="card w-90" style="background-color: #a0deff17; outline: 6px solid rgba(255, 255, 255, 0); border: none; border-radius: 20px; box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2)">
+              <div class="card-canvas p-3">
+                  <div class="canvas-container">
+                      <canvas id="graphic"></canvas>
+                  </div>
+              </div>
+          </div>
+          <!--<table class="table">
+              <thead>     
+              <tr>
+                  <th scope="col">Survey</th>
+                  <th scope="col">Course</th>
+                  <th scope="col">Student Name</th>
+                  <th scope="col">Email</th> 
+                  <th scope="col">Work Status</th>
+                  <th scope="col">Occupation</th> 
+                </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let StudentItem of StudentArray">
+                  <td>{{StudentItem.surveyTitle }}</td>
+                  <td>{{StudentItem.respondentCourse }}</td>
+                  <td>{{StudentItem.respondentName }}</td>
+                  <td>{{StudentItem.respondentEmail }}</td>
+                  <td>{{StudentItem.respondentStatus }}</td>
+                  <td>{{StudentItem.respondentOccupation }}</td>
+                  <td>
+                    
+                    <button type="button" class="btn btn-danger" (click)="setDelete(StudentItem)">Delete</button>            
+                  </td>
+                </tr>          
+              </tbody>
+            </table> -->
+      </div>
+  </div>
+</div>

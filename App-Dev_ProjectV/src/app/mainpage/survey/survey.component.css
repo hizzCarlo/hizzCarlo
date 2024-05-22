@@ -1,0 +1,194 @@
+/* Initially hide sidebar */
+.sidebar-toggle:checked + .col-lg-3 .sidebar {
+  display: none;
+}
+
+/* Sidebar position and size for larger screens */
+@media (min-width: 992px) {
+  .sidebar {
+    position: fixed;
+    overflow: auto;
+    top: 6.5rem;
+    left: 0;
+    height: 100%;
+    width: 12%; /* Adjust width as needed */
+    max-width: 250px; /* Set maximum width */
+    border-right: none; /* Updated border color */
+    display: block !important;
+    background-color: #a0deff17;
+  }
+}
+
+/* Toggle label style */
+.sidebar-toggle-label {
+  display: none;
+  color: #000;
+  padding: 16px;
+  cursor: pointer;
+}
+
+/* Show toggle label for mobile */
+@media (max-width: 991px) {
+  .sidebar {
+    overflow-y: hidden;
+    text-align: center;
+    /* Adjust the position and size of the sidebar here */
+    position: relative;
+    top: 5rem; /* Example adjustment */
+    left: -55px; /* Example adjustment */
+    width: 121.5%; /* Adjust width as needed */
+    max-width: 200%; /* Set maximum width */
+    z-index: 1;
+    background-color: #a0deff17;
+  }
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  margin-bottom: 10px; /* Add margin between sidebar links */
+  border-radius: 0 10px 10px 0; /* Rounded border on right side */
+  font-size: 18px;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #EE7214;
+  color: white;
+  border-radius: 0 15px 15px 0; /* Rounded border on right side */
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #E57C23; /* Updated hover color */
+  border-radius: 2px;
+  color: white;
+  border-radius: 0 15px 15px 0; /* Rounded border on right side */
+}
+
+/* Custom styling for "Create" button */
+.create-button {
+  background-color: #E57C23 !important;
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.create-button:hover {
+  background-color: white;
+  color: #E57C23;
+}
+.header-styles {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .options-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 991px) {
+  .options-header {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+  }
+
+  .create-survey {
+    margin-top: 0.3cm;
+  }
+}
+
+.select-category label {
+  display: inline-block;
+  width: 180px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+
+.select-category select {
+  display: inline-block;
+  width: 300px;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.surveys {
+  border: 1px solid gray;
+  margin-bottom: 1cm;
+}
+
+/*@media (min-width: 992px) @media (max-width: 991px)*/
+@media (min-width: 992px) {
+  .header-survey {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 991px) {
+  .header-survey {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+}
+
+.create-at {
+  font-size: smaller;
+  margin-top: -10px;
+}
+
+.survey-description {
+  text-align: justify;
+}
+
+.survey-options {
+  text-align: right;
+}
+
+.btn-survey {
+  margin-left: 10px;
+}
+
+@media (max-width: 991px) {
+  .btn-survey {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 5px;
+
+  }
+}
+
+.disabled-link {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.create-survey{
+  padding-left: 3.3rem; 
+  padding-top: .5rem;
+}
+.btn1{
+  padding: 10px;
+  margin-top: -0.5rem;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: -3.3rem;
+
+}
+.btn1:hover{
+  background-color: rgba(243, 161, 10, 0.512);
+}
+

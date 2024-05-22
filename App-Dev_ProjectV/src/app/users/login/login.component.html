@@ -1,0 +1,70 @@
+<!-- <video autoplay loop muted class="fullscreen-video">
+    <source src="../assets/img/vid-bg2.mp4" type="video/mp4"> -->
+    <!-- Add additional source tags for other video formats if necessary
+    Your browser does not support the video tag.
+  </video>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="logo-img mx-auto">
+            <img src="assets/img/formalytics-logo.png" class="img-fluid logo">
+        </div>
+        <div class="col-md-5">
+            <div style="background-color: rgba(250, 235, 215, 0.56);" class="card">
+                <div class="card-header">
+                    <a routerLinkActive="active" routerLink="/"><h5>x</h5></a>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control form-control-sm" id="username" [(ngModel)]="username"
+                                name="username" placeholder="Enter username">
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <input type="password" class="form-control form-control-sm" id="password"
+                                [(ngModel)]="password" name="password" placeholder="Password">
+                        </div>
+                        <button type="button" class="btn  w-100" (click)="loginUser()">Login</button>
+                    </form>
+                    <div class="account-section">
+                        <a style="font-weight: bold; font-size: 16px;" class="new-account-link" routerLinkActive="active" routerLink="/register">Create a new account</a>
+                        <a class="recovery-password-link" routerLinkActive="active" routerLink="/" style="pointer-events: none;">Recover password</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<body>
+    <div class="container"style="overflow: hidden;">
+        <div class="row justify-content-center">
+            <div class="logo-img mx-auto">
+                <img src="assets/img/formalytics-logo.png" class="img-fluid logo" alt="Logo" style="margin-top: 50px; margin-bottom: -20px;">
+            </div>
+            <div class="col-md-5">
+                <div class="card" style="background-color: #ffffff57; outline: 6px solid rgba(255, 255, 255, 0);margin-bottom: 30px; border: none; border-radius: 20px ;margin-top: 10px; padding-top:10px; box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2)">
+                    <div class="card-header">
+                        <a routerLinkActive="active" routerLink="/"><h5>x</h5></a>
+                    </div>
+                    <div class="card-body" style=" overflow: hidden;">
+                        <form>
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control form-control-sm" id="username" [(ngModel)]="username"
+                                    name="username" placeholder="Username" style="border-radius: 100px; background-color:none;">
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="password" class="form-control form-control-sm" id="password"
+                                    [(ngModel)]="password" name="password" placeholder="Password" style="border-radius: 100px; background-color:none;">
+                            </div>
+                            <button type="button" class="btn w-100" (click)="loginUser()" style="border-radius: 100px;">Login</button>
+                        </form>
+                        <div class="account-section">
+                            <a style="font-weight: bold; font-size: 16px;" class="new-account-link" routerLinkActive="active" routerLink="/register">Create a new account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

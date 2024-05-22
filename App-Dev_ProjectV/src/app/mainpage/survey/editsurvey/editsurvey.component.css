@@ -1,0 +1,64 @@
+.div-buttons{
+  margin-top: 1cm;
+  text-align: center;
+}
+
+.btn-left{
+  margin-right: 0.2cm;
+}
+
+.question-text{
+  color: #1e81b0;
+}
+
+.option-text{
+  color: black;
+}
+
+.button-option{
+background-color: #EE7214;
+color: white; 
+}
+
+.btn:hover{
+background-color: white;
+color: #E57C23;
+}
+
+
+.sidebar {
+  position: fixed;
+  overflow: auto;
+  top: 6.5rem;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #cc780bc4;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.header-styles {
+  text-align: center;
+}
+
+  

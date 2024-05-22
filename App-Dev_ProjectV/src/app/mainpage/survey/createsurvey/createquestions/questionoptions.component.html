@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-lg-3 col-md-4">
+        <div style="background-color: transparent; border: none;" class="sidebar">
+          <label for="sidebar-toggle" class="sidebar-toggle-label">&#9776; Toggle Sidebar</label>
+          <a class="nav-link" routerLinkActive="active" routerLink="/survey">Surveys</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="/respondent-data">Respondent</a>
+          <div class="create-survey">
+            <a type="button" class="btn1 button-option" routerLinkActive="active" routerLink="/formSurvey">New Survey
+              +</a>
+          </div>
+        </div>
+      </div>
+        <div style="padding-top: 8rem; padding-left: 10rem;" class="container">
+            <div class="card" style="width: 100%;" style="background-color: #a0deff17; outline: 6px solid rgba(255, 255, 255, 0); border: none; border-radius: 20px; box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2)">
+                <div class="card-header text-center" style="background-color:transparent; padding-top: 15px; padding-bottom: 0px">
+                    <p style="color:#EE7214; font-size: 40px;" class="text-center">Question and Answer</p>
+                </div>
+                <div class="card-subtitle px-4 pt-3" style="text-align: justify;">
+                    Welcome! In this form you will have the opportunity to create the content of your personalized survey.
+                    Here you can add questions and their respective answers, in order to obtain valuable information from your
+                    respondents. Let's start creating your survey!
+                </div>
+                <div class="card-body mb-1">
+                    <div class="question mb-2" *ngFor="let question of questions; let i = index">
+                        <div class="form-group d-flex align-items-cente mb-2">
+                            <input type="text" class="form-control question-input" id="question{{question.id}}"
+                                name="question{{question.id}}" [(ngModel)]="question.description"
+                                placeholder="Write your question here">
+                                <button class="btn button-option mx-1" type="button" (click)="removeQuestion(i)" style="background-color: red;"><i class="bi bi-trash" style="color: white;"></i></button>
+                        </div>
+                        <div class="form-group" *ngFor="let option of question.options; let j = index">
+                            <div class="input-group">
+                                <ul style="width: 100%; list-style: none;">
+                                    <li  class="d-flex align-items-center"> 
+                                        <input type="text" class="form-control option-input"
+                                            name="question{{question.id}}_option{{option.id}}" [(ngModel)]="option.description"
+                                            placeholder="Write your option here">
+                                        <div class="input-group-append d-flex align-items-center">
+                                            <button class="btn button-option" type="button" (click)="addOption(question)" 
+                                            style="margin-right: 5px;"><i class="bi bi-plus"></i></button>
+                                            <button class="btn button-option mx-1" type="button"
+                                                (click)="removeOption(question, j)" style="background-color: red;"><i class="bi bi-trash" style="color: white;"></i></button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn button-option" type="button" *ngIf="question.options.length < 1" (click)="addOption(question)" 
+                            style="margin-right: 5px;"><i class="bi bi-plus"></i>Add Option</button>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn button-option" type="button" (click)="addQuestion()">
+                            <i class="bi bi-plus"></i>Add Question
+                        </button>
+                    </div>
+                </div>
+                <div class="text-center mb-3">
+                    <button class="btn button-option mx-1" type="button" *ngIf="questions.length > 0 && atLeastOneOptionSelected()" 
+                        (click)="saveAll()">Save Form</button>              
+                    <button class="" type="button" (click)="close()" style="color: white;background-color: red; border-radius: 10px; border: none; padding:6px;">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

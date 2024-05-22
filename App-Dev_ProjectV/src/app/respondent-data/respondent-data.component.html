@@ -1,0 +1,76 @@
+<div class="container-fluid" style="width: 80vw;">
+  <div class="row">
+ 
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle">
+    <div class="col-lg-3 col-md-4">
+      <div style="background-color: transparent; border: none;" class="sidebar">
+        <label for="sidebar-toggle" class="sidebar-toggle-label">&#9776; Toggle Sidebar</label>
+        <a class="nav-link" routerLinkActive="active" routerLink="/survey">Surveys</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/respondent-data">Respondent</a>
+        <div class="create-survey">
+          <a type="button" class="btn1 button-option" routerLinkActive="active" routerLink="/formSurvey">New Survey
+            +</a>
+        </div>
+      </div>
+    </div>
+       <div class="col-lg-9 col-md-8" style="position: relative;">
+        <div class="card pb-3" style="margin-top: 8rem; background-color: #a0deff17;outline: 6px solid rgba(255, 255, 255, 0); border: none; border-radius: 20px; box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2)">
+          <div style="background-color: #a0deff17; padding-top: 10px; padding-bottom:0px" class="card-header">
+            <p style="color: #EE7214; font-size: 40px;" class="text-center">Respondent Data</p>
+          </div>
+          <div class="container mt-4" >
+            <input type="text" class="form-control" placeholder="Search by Survey..." [(ngModel)]="searchSurvey">
+            <!-- Dropdown for selecting the course -->
+            <select class="form-control mb-3" [(ngModel)]="selectedCourse">
+              <option value="ALL CATEGORIES">ALL CATEGORIES</option>
+              <option value="BSCS">BSCS</option>
+              <option value="BSIT">BSIT</option>
+              <option value="BSEMC">BSEMC</option>
+              <option value="ACT">ACT</option>
+            </select>
+            <div class="table-responsive"> 
+              <table class="table">
+                  <thead>     
+                  <tr>
+                      <th scope="col">Survey</th>
+                      <th scope="col">Course</th>
+                      <th scope="col">Student Name</th>
+                      <th scope="col" class="email-col">Email</th> 
+                      <th scope="col">Work Status</th>
+                      <th scope="col" class="occupation-col">Occupation</th> 
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let StudentItem of filteredStudents">
+                      <td>{{StudentItem.surveyTitle }}</td>
+                      <td>{{StudentItem.respondentCourse }}</td>
+                      <td>{{StudentItem.respondentName }}</td>
+                      <td class="email-col">{{StudentItem.respondentEmail }}</td>
+                      <td>{{StudentItem.respondentStatus }}</td>
+                      <td class="occupation-col">{{StudentItem.respondentOccupation }}</td>
+                      <td>
+                        
+                        <button type="button" class="btn btn-danger" (click)="setDelete(StudentItem)">Delete</button>            
+                      </td>
+                    </tr>          
+                  </tbody>
+                </table>
+              </div>
+              <!-- Displaying the employment status counts -->
+              <!-- <div class="employment-status-counts">
+                <p>Total Employed: {{ employedCount }}</p>
+                <p>Total Unemployed: {{ unemployedCount }}</p>
+                <p>Total Seeking Employment: {{ seekingEmploymentCount }}</p>
+              </div> -->
+            </div>
+            <div class="chart-container">
+              <div class="chart-bar employed" [style.height]="employedCount + 'rem'">Employed: {{ employedCount }}</div>
+              <div class="chart-bar unemployed" [style.height]="unemployedCount + 'rem'">Unemployed: {{ unemployedCount }}</div>
+              <div class="chart-bar seeking-employment" [style.height]="seekingEmploymentCount + 'rem'">Seeking Employment: {{ seekingEmploymentCount }}</div>
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  </div>

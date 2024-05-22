@@ -1,0 +1,88 @@
+.question-input{
+  border: 2px solid #e28743;
+}
+
+.option-input{
+  border: 2px solid #76b5c5;
+}
+
+.button-option{
+  background-color: #EE7214;
+  color: white; 
+}
+
+.btn:hover{
+background-color: white;
+color: #E57C23;
+}
+
+
+/* 
+/* Sidebar position and size for larger screens */
+@media (min-width: 992px) {
+.sidebar {
+  position: fixed;
+  overflow: auto;
+  top: 6.5rem;
+  left: 0;
+  height: 100%;
+  width: 12%; /* Adjust width as needed */
+  max-width: 250px; /* Set maximum width */
+  border-right: none; /* Updated border color */
+  display: block !important;
+}
+}
+
+/* Toggle label style */
+.sidebar-toggle-label {
+display: none;
+color: #000;
+padding: 16px;
+cursor: pointer;
+}
+
+/* Show toggle label for mobile */
+@media (max-width: 991px) {
+.sidebar {
+  overflow-y: hidden;
+  text-align: center;
+  /* Adjust the position and size of the sidebar here */
+  position: relative;
+  top: 5rem; /* Example adjustment */
+  left: -55px; /* Example adjustment */
+  width: 121.5%; /* Adjust width as needed */
+  max-width: 200%; /* Set maximum width */
+  z-index: 1;
+}
+}
+
+/* Sidebar links */
+.sidebar a {
+display: block;
+color: black;
+padding: 16px;
+text-decoration: none;
+margin-bottom: 10px; /* Add margin between sidebar links */
+border-radius: 0 10px 10px 0; /* Rounded border on right side */
+font-size: 18px;
+}
+
+/* Active/current link */
+.sidebar a.active {
+background-color: #EE7214;
+color: white;
+border-radius: 0 15px 15px 0; /* Rounded border on right side */
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+background-color: #E57C23; /* Updated hover color */
+border-radius: 2px;
+color: white;
+border-radius: 0 15px 15px 0; /* Rounded border on right side */
+} 
+
+
+.header-styles {
+  text-align: center;
+}

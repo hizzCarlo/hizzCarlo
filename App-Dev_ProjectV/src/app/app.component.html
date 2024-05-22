@@ -1,0 +1,18 @@
+<ng-container *ngIf="router.url !== '/login' && router.url !== '/register' && router.url !== '/thank-you'">
+  <app-header></app-header>
+  
+  <!-- Video Background -->
+  <video autoplay loop muted class="fullscreen-video">
+    <!-- <source src="../assets/img/vid-bg2.mp4" type="video/mp4"> -->
+    <!-- Add additional source tags for other video formats if necessary -->
+    Your browser does not support the video tag.
+  </video>
+  <div class="container container-body">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>
+</ng-container>
+
+<ng-container *ngIf="router.url === '/login' || router.url === '/register' || router.url === '/thank-you'">
+  <router-outlet></router-outlet>
+</ng-container>
